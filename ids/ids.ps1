@@ -42,3 +42,7 @@ foreach($user in $users ){
     new-user -employeeId $user.employeeId -firstname $user.firstName -lastname $user.lastName -email $user.email -active $true
 }
 }
+function create-user-folders{
+   $folder = Import-csv C:\temp\users.csv
+   foreach($name in $folder){ New-item  -Path "c:\temp1" -Name $name.employeeId}
+}
